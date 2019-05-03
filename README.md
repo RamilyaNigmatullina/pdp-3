@@ -1,6 +1,6 @@
 # Ramilya's PDP-3
 
-[![Build Status](https://semaphoreci.com/api/v1/ramilyanigmatullina/pdp-3/branches/master/badge.svg)](https://semaphoreci.com/ramilyanigmatullina/pdp-3)
+[![Build Status](https://semaphoreci.com/api/v1/ramilyanigmatullina/pdp-3-2/branches/master/badge.svg)](https://semaphoreci.com/ramilyanigmatullina/pdp-3-2)
 
 It's a simple blog based on Rails 5 and Ruby 2.4.2
 

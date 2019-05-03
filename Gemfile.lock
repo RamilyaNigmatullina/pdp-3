@@ -9,6 +9,7 @@ GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
   specs:
+    action_policy (0.2.4)
     actioncable (5.1.6.2)
       actionpack (= 5.1.6.2)
       nio4r (~> 2.0)
@@ -229,7 +230,7 @@ GEM
     nenv (0.3.0)
     newrelic_rpm (3.18.1.330)
     nio4r (2.3.1)
-    nokogiri (1.10.2)
+    nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
@@ -259,8 +260,6 @@ GEM
       pry (>= 0.9.10)
     public_suffix (2.0.5)
     puma (3.9.1)
-    pundit (1.1.0)
-      activesupport (>= 3.0.0)
     rack (2.0.6)
     rack-canonical-host (0.2.2)
       addressable (> 0, < 3)
@@ -435,6 +434,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  action_policy
   active_link_to
   autoprefixer-rails
   awesome_print
@@ -477,7 +477,6 @@ DEPENDENCIES
   premailer-rails
   pry-rails
   puma
-  pundit
   rack-canonical-host
   rack-mini-profiler!
   rails (= 5.1.6.2)

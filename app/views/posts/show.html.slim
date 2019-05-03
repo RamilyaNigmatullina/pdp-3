@@ -1,0 +1,12 @@
+.row
+  .columns
+    h2 = post.title
+
+    = post.body
+
+    br
+
+    - if allowed_to?(:manage?, post, with: Admin::PostPolicy)
+      .actions-links
+         => link_to "Edit", edit_admin_post_path(post)
+         = link_to "Delete", admin_post_path(post), method: :delete, data: { confirm: "Are you sure?" }
