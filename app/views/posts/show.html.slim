@@ -1,12 +1,14 @@
 .row
   .columns
-    h2 = post.title
+    .post
+      h2 = post.title
 
-    = post.body
+      .post__body
+        = post.body
 
-    br
+      .post__author
+        = post.user.full_name
 
-    - if allowed_to?(:manage?, post, with: Admin::PostPolicy)
-      .actions-links
+      - if allowed_to?(:manage?, post, with: Admin::PostPolicy)
          => link_to "Edit", edit_admin_post_path(post)
          = link_to "Delete", admin_post_path(post), method: :delete, data: { confirm: "Are you sure?" }

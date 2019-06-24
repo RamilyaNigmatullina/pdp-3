@@ -1,7 +1,12 @@
 .post {
-  padding-bottom: 25px;
-}
+  padding-bottom: 20px;
 
-.actions-links {
-  padding-top: 25px;
+  &__body {
+    padding-bottom: 20px;
+  }
+
+  &__author {
+    padding-bottom: 25px;
+    font-style: italic;
+  }
 }

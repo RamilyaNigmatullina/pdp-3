@@ -4,5 +4,7 @@ class User < ApplicationRecord
 
   validates :full_name, :role, presence: true
 
-  enum role: { user: "user", admin: "admin" }
+  has_many :posts
+
+  enum role: { user: "user", admin: "admin", super_admin: "super_admin" }
 end
