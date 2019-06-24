@@ -6,6 +6,7 @@ module Admin
     end
 
     def create
+      post.user = current_user
       post.save
 
       respond_with post, location: post_path(post)
