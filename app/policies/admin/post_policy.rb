@@ -1,9 +1,11 @@
 module Admin
   class PostPolicy < ApplicationPolicy
-    alias_rule :new?, :create?, to: :manage?
-
-    def manage?
+    def new?
       user&.admin?
+    end
+
+    def edit?
+      user&.admin? && record.user == user
     end
   end
 end

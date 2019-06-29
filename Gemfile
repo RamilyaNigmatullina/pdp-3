@@ -27,6 +27,7 @@ gem "simple_form"
 gem "slim"
 
 # all other gems
+gem "aasm"
 gem "action_policy"
 gem "decent_decoration"
 gem "decent_exposure"

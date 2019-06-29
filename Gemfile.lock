@@ -9,6 +9,8 @@ GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
   specs:
+    aasm (5.0.5)
+      concurrent-ruby (~> 1.0)
     action_policy (0.3.1)
     actioncable (5.1.6.2)
       actionpack (= 5.1.6.2)
@@ -448,6 +450,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aasm
   action_policy
   active_link_to
   autoprefixer-rails

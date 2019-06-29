@@ -2,4 +2,8 @@
   ul.menu
     li = link_to "Blog", root_path
     - if current_user&.admin?
+    - if allowed_to?(:new?, Post, with: Admin::PostPolicy)
       = active_link_to "New Post", new_admin_post_path, active: :exclusive, wrap_tag: :li
+    - if allowed_to?(:index?, Post, with: Admin::PendingPostPolicy)
+      = active_link_to "Pending Posts", admin_pending_posts_path, active: :exclusive, wrap_tag: :li
+      = active_link_to "Rejected Posts", admin_rejected_posts_path, active: :exclusive, wrap_tag: :li
