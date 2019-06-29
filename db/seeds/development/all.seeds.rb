@@ -1,4 +1,4 @@
-FactoryGirl.create(:admin, email: "admin@example.com")
-FactoryGirl.create(:user, email: "user@example.com")
+FactoryBot.create(:admin, email: "admin@example.com")
+FactoryBot.create(:user, email: "user@example.com")
 
-FactoryGirl.create_list(:post, 6)
+FactoryBot.create_list(:post, 6)
