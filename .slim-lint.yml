@@ -40,6 +40,9 @@ linters:
       - Style/TrailingWhitespace
       - Style/WhileUntilModifier
       - Style/NestedTernaryOperator
+      - Layout/TrailingBlankLines
+      - Layout/AlignArguments
+      - Layout/IndentationWidth
 
   TagCase:
     enabled: true

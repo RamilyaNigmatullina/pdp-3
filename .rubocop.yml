@@ -58,6 +58,9 @@ Style/EmptyMethod:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+Style/AccessModifierDeclarations:
+  Enabled: false
+
 Style/StringMethods:
   Enabled: true
 
@@ -73,8 +76,14 @@ Layout/AlignParameters:
     - with_first_parameter
     - with_fixed_indentation
 
-Lint/EndAlignment:
+Layout/EndAlignment:
   EnforcedStyleAlignWith: variable
   SupportedStylesAlignWith:
     - keyword
     - variable
+
+Capybara/FeatureMethods:
+  Enabled: false
+
+RSpec/HookArgument:
+  Enabled: false
