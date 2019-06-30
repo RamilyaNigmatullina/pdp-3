@@ -3,7 +3,9 @@ require "rails_helper"
 feature "Reject Post" do
   include_context "when super admin signed in"
 
-  before { create :post, title: "Toy Story 4" }
+  let(:user) { create :user, email: "user@example.com" }
+
+  before { create :post, user: user, title: "Toy Story 4" }
 
   scenario "Super admin rejects post" do
     visit admin_pending_posts_path
@@ -20,5 +22,10 @@ feature "Reject Post" do
     click_on "Rejected Posts"
 
     expect(page).to have_content("Toy Story 4")
+
+    open_email("user@example.com")
+
+    expect(current_email.subject).to eq("Post rejected")
+    expect(current_email).to have_content("You post Toy Story 4 was rejected")
   end
 end
