@@ -9,6 +9,16 @@ en:
       confirmations:
         create:
           alert: "Confirmations could not be sent"
+    admin:
+      posts:
+        approvals:
+          create:
+            notice: "Post was successfully published."
+            alert: "Post couldn't be published."
+        rejections:
+          create:
+            notice: "Post was successfully rejected."
+            alert: "Post couldn't be rejected."
     actions:
       create:
         notice: "%{resource_name} was successfully created."

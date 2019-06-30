@@ -1,5 +1,5 @@
 module Admin
-  class PostsController < Admin::BaseController
+  class PostsController < BaseController
     expose_decorated :post
 
     def new

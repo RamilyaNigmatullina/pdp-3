@@ -1,0 +1,6 @@
+.row
+  .columns
+    h2 Pending Posts
+
+    = render partial: "posts/post", collection: posts
+    = paginate posts

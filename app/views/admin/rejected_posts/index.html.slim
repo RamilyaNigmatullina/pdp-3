@@ -1,0 +1,6 @@
+.row
+  .columns
+    h2 Rejected Posts
+
+    = render partial: "posts/post", collection: posts
+    = paginate posts
