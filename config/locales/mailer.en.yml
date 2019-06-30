@@ -1,0 +1,6 @@
+en:
+  application_mailer:
+    post_published:
+      subject: Post published
+    post_rejected:
+      subject: Post rejected

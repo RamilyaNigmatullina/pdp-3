@@ -2,8 +2,8 @@ require "rails_helper"
 
 feature "List Posts" do
   before do
-    create :post, title: "Clash Royale cheats"
-    create :post, title: "Tekken 7 review"
+    create :post, :published, title: "Clash Royale cheats"
+    create :post, :published, title: "Tekken 7 review"
   end
 
   scenario "User see list of posts" do
