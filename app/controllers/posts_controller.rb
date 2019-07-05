@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  expose_decorated :posts, -> { Post.published.order(created_at: :desc).page(params[:page]) }
+  expose_decorated :posts, :fetch_posts
   expose_decorated :post
 
   skip_verify_authorized only: %i[index show]
@@ -8,5 +8,15 @@ class PostsController < ApplicationController
   end
 
   def show
+  end
+
+  private
+
+  def fetch_posts
+    Post
+      .published
+      .includes(:user, :taggings)
+      .order(created_at: :desc)
+      .page(params[:page])
   end
 end

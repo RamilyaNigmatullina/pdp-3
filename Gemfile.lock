@@ -56,6 +56,8 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts-as-taggable-on (6.0.0)
+      activerecord (~> 5.0)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
@@ -86,6 +88,8 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
+    childprocess (1.0.1)
+      rake (< 13.0)
     choice (0.2.0)
     cliver (0.3.2)
     coderay (1.1.2)
@@ -354,6 +358,7 @@ GEM
     ruby-graphviz (1.2.4)
     ruby-progressbar (1.10.1)
     ruby_dep (1.5.0)
+    rubyzip (1.2.3)
     safe_yaml (1.0.5)
     sass (3.4.25)
     sass-rails (5.0.7)
@@ -367,6 +372,10 @@ GEM
       sass (~> 3.4.20)
     seedbank (0.5.0)
       rake (>= 10.0)
+    selectize-rails (0.12.6)
+    selenium-webdriver (3.142.3)
+      childprocess (>= 0.5, < 2.0)
+      rubyzip (~> 1.2, >= 1.2.2)
     shellany (0.0.1)
     shoulda-matchers (4.1.0)
       activesupport (>= 4.2.0)
@@ -436,6 +445,10 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webdrivers (4.1.0)
+      nokogiri (~> 1.6)
+      rubyzip (~> 1.0)
+      selenium-webdriver (>= 3.0, < 4.0)
     webmock (3.6.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
@@ -453,6 +466,7 @@ DEPENDENCIES
   aasm
   action_policy
   active_link_to
+  acts-as-taggable-on
   autoprefixer-rails
   awesome_print
   brakeman
@@ -508,6 +522,7 @@ DEPENDENCIES
   sass-rails (~> 5.0.0, >= 5.0.6)
   scss_lint
   seedbank
+  selectize-rails
   shoulda-matchers
   simple_form
   slim
@@ -520,6 +535,7 @@ DEPENDENCIES
   terminal-notifier-guard
   uglifier (>= 2.7.2)
   web-console
+  webdrivers
   webmock
 
 RUBY VERSION

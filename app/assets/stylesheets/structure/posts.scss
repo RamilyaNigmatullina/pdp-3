@@ -2,11 +2,20 @@
   padding-bottom: 20px;
 
   &__body {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
 
   &__author {
-    padding-bottom: 25px;
+    padding-bottom: 10px;
     font-style: italic;
+  }
+
+  &__tags {
+    padding-bottom: 10px;
+    font-style: italic;
+  }
+
+  &__created-at {
+    text-align: right;
   }
 }

@@ -29,6 +29,7 @@ gem "slim"
 # all other gems
 gem "aasm"
 gem "action_policy"
+gem "acts-as-taggable-on"
 gem "decent_decoration"
 gem "decent_exposure"
 gem "devise", ">= 4.6.0"
@@ -45,6 +46,7 @@ gem "rack-mini-profiler", require: false, git: "https://github.com/MiniProfiler/
 gem "responders"
 gem "rollbar"
 gem "seedbank"
+gem "selectize-rails"
 gem "stackprof"
 
 group :staging, :production do
@@ -83,6 +85,7 @@ group :development, :test do
   gem "rubocop-rspec", require: false
   gem "scss_lint", require: false
   gem "slim_lint", require: false
+  gem "webdrivers"
 end
 
 group :development do
