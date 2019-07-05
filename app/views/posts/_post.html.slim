@@ -1,6 +1,17 @@
 .post
   h3 = link_to post.title, post_path(post)
 
-  = truncate(post.body, length: 750) { link_to " read more", post_path(post) }
+  .post__body
+    = truncate(post.body, length: 750) { link_to " read more", post_path(post) }
+  .row
+    .small-6.columns
+      .post__author
+        = post.user.full_name
+
+      = render "posts/tags", post: post
+
+    .small-6.columns
+      .post__created-at
+        = post.formatted_created_at
 
   hr

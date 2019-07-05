@@ -13,5 +13,9 @@ FactoryBot.define do
     trait :rejected do
       state { "rejected" }
     end
+
+    trait :with_tags do
+      tag_list { Faker::Lorem.words(3) }
+    end
   end
 end

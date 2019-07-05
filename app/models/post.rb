@@ -1,6 +1,8 @@
 class Post < ApplicationRecord
   include AASM
 
+  acts_as_taggable
+
   belongs_to :user
 
   validates :title, :body, presence: true

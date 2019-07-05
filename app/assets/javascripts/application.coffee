@@ -8,7 +8,9 @@
 #= require jquery-ujs
 #= require foundation
 #= require current_user
+#= require selectize
 #= require_tree ../templates
 #= require_tree .
+
 
 $(document).foundation()
