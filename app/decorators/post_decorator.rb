@@ -3,7 +3,7 @@ class PostDecorator < ApplicationDecorator
 
   decorates_association :user
 
-  def formatted_created_at
-    object.created_at.strftime("%d %b %Y, %k:%M")
+  def humanized_created_at
+    l(object.created_at, format: :full_datetime)
   end
 end
