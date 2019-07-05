@@ -2,12 +2,12 @@
   .columns
     h2 Posts
 
-    = simple_form_for :search, method: :get, url: posts_path do |f|
-      .row
-        .small-11.columns
-          = f.input :tags, label: false, input_html: { value: search_params[:tags], autofocus: true }
-        .small-1.columns
-          = f.button :submit, class: "button"
+    = simple_form_for search_form, method: :get, url: posts_path do |f|
+      .input-group
+        = f.label :tags, class: "input-group-label", required: false
+        = f.input :tags, label: false, wrapper: false, input_html: { class: "input-group-field" }
+        .input-group-button
+          = f.button :submit
 
     = render posts
     = paginate posts

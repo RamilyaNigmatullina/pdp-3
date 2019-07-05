@@ -16,7 +16,7 @@ feature "List Posts" do
   scenario "Admin searches posts by tags" do
     visit posts_path
 
-    fill_in "Search by Tags", with: "clash"
+    fill_in "Search", with: "clash"
 
     click_on "Find"
 

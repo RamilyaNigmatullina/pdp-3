@@ -1,9 +1,12 @@
 en:
   helpers:
     submit:
-      search:
-        submit: Find
+      search_form:
+        create: Find
   simple_form:
     placeholders:
-      search:
-        tags: Search by Tags
+      search_form:
+        tags: Enter tags here
+    labels:
+      search_form:
+        tags: Search
