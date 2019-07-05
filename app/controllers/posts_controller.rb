@@ -4,6 +4,8 @@ class PostsController < ApplicationController
 
   skip_verify_authorized only: %i[index show]
 
+  helper_method :search_params
+
   def index
   end
 
@@ -12,11 +14,15 @@ class PostsController < ApplicationController
 
   private
 
+  def filtered_posts
+    FilteredPosts.new(Post.includes(:user, :taggings).published, search_params).all
+  end
+
   def fetch_posts
-    Post
-      .published
-      .includes(:user, :taggings)
-      .order(created_at: :desc)
-      .page(params[:page])
+    filtered_posts.order(created_at: :desc).page(params[:page])
+  end
+
+  def search_params
+    params.fetch(:search, {}).permit(:tags).to_h
   end
 end

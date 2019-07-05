@@ -1,0 +1,9 @@
+en:
+  helpers:
+    submit:
+      search:
+        submit: Find
+  simple_form:
+    placeholders:
+      search:
+        tags: Search by Tags
