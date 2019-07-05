@@ -85,6 +85,7 @@ group :development, :test do
   gem "rubocop-rspec", require: false
   gem "scss_lint", require: false
   gem "slim_lint", require: false
+  gem "webdrivers"
 end
 
 group :development do
@@ -95,5 +96,4 @@ group :development do
   gem "spring-commands-rspec"
   gem "spring-watcher-listen"
   gem "web-console"
-  gem "webdrivers"
 end
