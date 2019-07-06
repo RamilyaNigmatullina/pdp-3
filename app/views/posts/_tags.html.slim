@@ -1,4 +1,4 @@
 - if post.tag_list.any?
   .post__tags
     - post.tag_list.each do |tag|
-      => link_to "##{tag}", "#"
+      => link_to "##{tag}", posts_path(search_form: { tags: tag })

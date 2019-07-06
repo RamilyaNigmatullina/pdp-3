@@ -2,8 +2,8 @@ require "rails_helper"
 
 feature "List Posts" do
   before do
-    create :post, :published, title: "Clash Royale cheats"
-    create :post, :published, title: "Tekken 7 review"
+    create :post, :published, title: "Clash Royale cheats", tag_list: ["games", "clash royale"]
+    create :post, :published, title: "Tekken 7 review", tag_list: %w[games tekken]
   end
 
   scenario "User see list of posts" do
@@ -11,5 +11,16 @@ feature "List Posts" do
 
     expect(page).to have_content("Clash Royale cheats")
     expect(page).to have_content("Tekken 7 review")
+  end
+
+  scenario "Admin searches posts by tags" do
+    visit posts_path
+
+    fill_in "Search", with: "clash"
+
+    click_on "Find"
+
+    expect(page).to have_content("Clash Royale cheats")
+    expect(page).not_to have_content("Tekken 7 review")
   end
 end
