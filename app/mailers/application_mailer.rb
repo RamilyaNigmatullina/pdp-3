@@ -14,4 +14,7 @@ class ApplicationMailer < ActionMailer::Base
 
     mail(to: @user.email)
   end
+
+  def daily_updates
+  end
 end

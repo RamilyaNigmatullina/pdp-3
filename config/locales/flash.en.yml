@@ -31,3 +31,6 @@ en:
         alert: "%{resource_name} could not be destroyed."
   action_policy:
     unauthorized_error: "You cannot perform this action."
+  subscribers:
+    create:
+      notice: "You have been successfully subscribed to the newsletter!"
