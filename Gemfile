@@ -28,7 +28,6 @@ gem "meta-tags"
 gem "simple_form"
 gem "slim"
 
-
 # all other gems
 gem "aasm"
 gem "action_policy"

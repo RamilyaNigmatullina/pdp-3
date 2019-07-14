@@ -1,10 +1,9 @@
 .row
   .small-5.small-offset-7.columns
-    = simple_form_for Subscriber.new, url: subscribers_path, validate: true, remote: true,
+    = simple_form_for Subscriber.new, url: subscribers_path, remote: true, validate: true,
       html: { class: "js-subscriber-form" } do |f|
       .input-group
         = f.label :email, class: "input-group-label"
-        = f.input :email, label: false, wrapper: false, input_html: { class: "input-group-field js-email" },
-          validate: { presence: true }
+        = f.input :email, label: false, wrapper: false, input_html: { class: "input-group-field js-email" }
         .input-group-button
           = f.button :submit
