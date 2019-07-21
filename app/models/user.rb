@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :full_name, :role, presence: true
 
   has_many :posts, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   enum role: { user: "user", admin: "admin", super_admin: "super_admin" }
 end

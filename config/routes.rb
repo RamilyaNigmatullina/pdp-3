@@ -12,4 +12,10 @@ Rails.application.routes.draw do
     resources :pending_posts, only: :index
     resources :rejected_posts, only: :index
   end
+
+  namespace :users do
+    resources :posts, only: [] do
+      resources :likes, only: %i[create destroy], module: :posts
+    end
+  end
 end
