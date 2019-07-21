@@ -8,17 +8,8 @@
 //= require jquery-ujs
 //= require current_user
 //= require selectize
-//= require turbolinks
-//= require rails.validations
-//= require rails.validations.simple_form
-//= require rails.validations.simple_form.bootstrap4
 //= require foundation
 //= require_tree ../templates
 //= require_tree .
 
 $(document).foundation();
-
-$(document).bind(("turbolinks:load"), function() {
-  ClientSideValidations.disableValidators();
-  return $(ClientSideValidations.selectors.forms).validate();
-});

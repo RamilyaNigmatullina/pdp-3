@@ -10,4 +10,11 @@ class ApplicationMailerPreview < ActionMailer::Preview
 
     ApplicationMailer.post_rejected(post)
   end
+
+  def daily_updates
+    subscriber_email = FactoryBot.build_stubbed(:subscriber)
+    posts = FactoryBot.build_stubbed_list(:post, 2)
+
+    ApplicationMailer.daily_updates(subscriber_email, posts)
+  end
 end

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "posts#index"
 
   resources :posts, only: %i[index show]
-  resources :subscribers, only: %i[create destroy]
+  resources :subscribers, only: %i[show create destroy]
 
   namespace :admin do
     resources :posts, only: %i[new create edit update destroy] do

@@ -15,6 +15,10 @@ class ApplicationMailer < ActionMailer::Base
     mail(to: @user.email)
   end
 
-  def daily_updates
+  def daily_updates(subscriber, posts)
+    @subscriber = subscriber
+    @posts = posts
+
+    mail(to: subscriber.email)
   end
 end

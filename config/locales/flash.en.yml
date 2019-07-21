@@ -19,6 +19,11 @@ en:
           create:
             notice: "Post was successfully rejected."
             alert: "Post couldn't be rejected."
+    subscribers:
+      create:
+        notice: "You have been successfully subscribed to the newsletter!"
+      destroy:
+        notice: "You have been successfully unsubscribed."
     actions:
       create:
         notice: "%{resource_name} was successfully created."
@@ -31,6 +36,3 @@ en:
         alert: "%{resource_name} could not be destroyed."
   action_policy:
     unauthorized_error: "You cannot perform this action."
-  subscribers:
-    create:
-      notice: "You have been successfully subscribed to the newsletter!"
