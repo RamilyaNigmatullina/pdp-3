@@ -5,6 +5,8 @@ class Post < ApplicationRecord
 
   belongs_to :user
 
+  has_many :likes, dependent: :destroy
+
   validates :title, :body, presence: true
 
   scope :pending, -> { where(state: :pending) }
