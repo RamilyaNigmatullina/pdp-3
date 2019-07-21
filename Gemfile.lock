@@ -411,6 +411,7 @@ GEM
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
+    timecop (0.9.1)
     tty-color (0.5.0)
     tty-pager (0.12.1)
       strings (~> 0.1.4)
@@ -519,6 +520,7 @@ DEPENDENCIES
   spring-watcher-listen
   stackprof
   terminal-notifier-guard
+  timecop
   uglifier (>= 2.7.2)
   web-console
   webdrivers

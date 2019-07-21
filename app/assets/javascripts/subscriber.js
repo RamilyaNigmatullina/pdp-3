@@ -8,7 +8,7 @@ class Subscriber {
     $(formSelector).on ("ajax:error", this.clearInput);
   }
 
-  clearInput= ((event, data) => {
+  clearInput = ((event, data) => {
     $("html, body").animate({ scrollTop: 0 }, "fast");
     this.emailInput.val("");
   });

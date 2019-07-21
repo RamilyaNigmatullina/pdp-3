@@ -20,7 +20,7 @@ class Encryptor
   attr_reader :encryptor
 
   def length
-    @length ||= ActiveSupport::MessageEncryptor.key_len
+    ActiveSupport::MessageEncryptor.key_len
   end
 
   def key

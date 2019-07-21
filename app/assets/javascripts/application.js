@@ -6,9 +6,9 @@
 //
 //= require jquery2
 //= require jquery-ujs
+//= require foundation
 //= require current_user
 //= require selectize
-//= require foundation
 //= require_tree ../templates
 //= require_tree .
 

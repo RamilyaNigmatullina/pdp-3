@@ -1,8 +1,14 @@
-class PostsQuery
+class RecentPostsQuery
   DEFAULT_MAILING_TIME = 9
 
-  def recent_posts
-    Post.where(
+  attr_reader :relation
+
+  def initialize(relation = Post.all)
+    @relation = relation
+  end
+
+  def all
+    relation.where(
       "posts.created_at >= :from_date AND posts.created_at < :to_date",
       from_date: from_date,
       to_date: to_date
