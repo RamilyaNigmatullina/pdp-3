@@ -13,5 +13,8 @@
     .small-6.columns
       .post__created-at
         = post.humanized_created_at
+      .post__likes
+        ' Likes:
+        = post.likes_count
 
   hr
