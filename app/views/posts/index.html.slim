@@ -1,13 +1,22 @@
-.row
-  .columns
-    h2 Posts
+.posts-page
+  .row
+    .columns
+      .small-8.columns
+        h2 Posts
+      .small-4.columns
+        = simple_form_for :sort_form, method: :get, url: posts_path, class: "sort-form" do |f|
+          .input-group
+            = f.label :order, class: "input-group-label", required: false
+            = f.input :order, label: false, wrapper: false, collection: Post::SORT_ORDERS, include_blank: false,
+              input_html: { class: "input-group-field" }
 
-    = simple_form_for search_form, method: :get, url: posts_path do |f|
-      .input-group
-        = f.label :tags, class: "input-group-label", required: false
-        = f.input :tags, label: false, wrapper: false, input_html: { class: "input-group-field" }
-        .input-group-button
-          = f.button :submit
+      = simple_form_for search_form, method: :get, url: posts_path do |f|
+        .input-group
+          = f.label :tags, class: "input-group-label", required: false
+          = f.input :tags, label: false, wrapper: false, input_html: { class: "input-group-field" }
+          .input-group-button
+            = f.button :submit
 
-    = render posts
-    = paginate posts
+      .posts
+        = render posts
+      = paginate posts

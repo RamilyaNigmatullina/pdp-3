@@ -11,6 +11,7 @@ gem "foundation-icons-sass-rails"
 gem "foundation-rails"
 gem "premailer-rails"
 gem "sass-rails", "~> 5.0.0", ">= 5.0.6"
+gem "skim"
 gem "uglifier", ">= 2.7.2"
 
 source "https://rails-assets.org" do
@@ -28,6 +29,7 @@ gem "slim"
 # all other gems
 gem "aasm"
 gem "action_policy"
+gem "active_model_serializers", "~> 0.10.0"
 gem "acts-as-taggable-on"
 gem "decent_decoration"
 gem "decent_exposure"
