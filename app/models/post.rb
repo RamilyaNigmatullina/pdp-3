@@ -1,6 +1,8 @@
 class Post < ApplicationRecord
   include AASM
 
+  SORT_ORDERS = [%w[Recent recent], %w[Oldest oldest], %w[Popular popular]].freeze
+
   acts_as_taggable
 
   belongs_to :user
@@ -12,6 +14,9 @@ class Post < ApplicationRecord
   scope :pending, -> { where(state: :pending) }
   scope :approved, -> { where(state: :approved) }
   scope :rejected, -> { where(state: :rejected) }
+  scope :recent, -> { order(created_at: :desc) }
+  scope :oldest, -> { order(created_at: :asc) }
+  scope :popular, -> { order(likes_count: :desc) }
 
   aasm column: :state do
     state :pending, initial: true

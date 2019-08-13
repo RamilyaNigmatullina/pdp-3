@@ -6,10 +6,11 @@
 //
 //= require jquery2
 //= require jquery-ujs
+//= require jquery-debounce
 //= require foundation
 //= require current_user
+//= require skim
 //= require selectize
-//= require_tree ../templates
 //= require_tree .
 
 $(document).foundation();

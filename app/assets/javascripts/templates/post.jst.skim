@@ -1,0 +1,28 @@
+- $.each @posts, (i, post) =>
+  .post
+    h3
+      a href="/posts/#{post.id}"
+        = post.title
+    .post__body
+      = post.truncated_body
+    .row
+      .small-6.columns
+        .post__author
+          = post.user.full_name
+
+        .post__tags
+          - if post.tag_list.length
+            .post__tags
+              - $.each post.tag_list, (i, tag) =>
+                a href="/posts?search_form[tags]=#{tag}"
+                  => "##{tag}"
+
+      .small-6.columns
+        div.post__created-at
+          = post.humanized_created_at
+        - if post.published
+          .post__likes
+            ' Likes:
+            = post.likes_count
+
+    hr

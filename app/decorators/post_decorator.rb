@@ -1,5 +1,5 @@
 class PostDecorator < ApplicationDecorator
-  delegate :title, :body, :tag_list, :likes_count
+  delegate :title, :body, :tag_list, :likes_count, :published?
 
   decorates_association :user
 

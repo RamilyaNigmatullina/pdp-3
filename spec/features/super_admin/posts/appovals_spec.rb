@@ -7,7 +7,7 @@ feature "Approve Post" do
 
   before { create :post, user: user, title: "Toy Story 4" }
 
-  scenario "Super admin approves post" do
+  scenario "Super admin approves post", :js do
     visit admin_pending_posts_path
 
     click_on "Toy Story 4"

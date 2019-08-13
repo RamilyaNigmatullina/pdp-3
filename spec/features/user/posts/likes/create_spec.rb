@@ -3,7 +3,7 @@ require "rails_helper"
 feature "Like Post" do
   include_context "when current user signed in"
 
-  let(:post) { create :post }
+  let(:post) { create :post, :published }
 
   scenario "User likes post" do
     visit post_path(post)

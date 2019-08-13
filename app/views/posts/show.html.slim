@@ -11,12 +11,13 @@
 
       = render "tags"
 
-      - if user_signed_in?
-        - if like
-          => link_to "Dislike", users_post_like_path(post, like), method: :delete
-        - else
-          => link_to "Like", users_post_likes_path(post), method: :post
-      = post.likes_count
+      - if post.published?
+        - if user_signed_in?
+          - if like
+            => link_to "Dislike", users_post_like_path(post, like), method: :delete
+          - else
+            => link_to "Like", users_post_likes_path(post), method: :post
+          = post.likes_count
 
       - if allowed_to?(:edit?, post, with: Admin::PostPolicy)
         => link_to "Edit", edit_admin_post_path(post)
