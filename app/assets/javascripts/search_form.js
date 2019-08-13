@@ -27,7 +27,6 @@ class SearchForm {
 
   updatePosts = () => {
     this.page = DEFAULT_PAGE;
-    this.postsContainer.html("");
     this.loadPosts();
   }
 
@@ -50,10 +49,19 @@ class SearchForm {
         }
       },
       success: function(response) {
-        $(this.loadMoreLink).toggleClass("hidden", response.length != ITEMS_PER_PAGE)
-        this.postsContainer.append(JST["templates/post"]({posts: response}));
+        this.toggleLoadMoreLink(response);
+        this.showPosts(response);
       }.bind(this)
-    })
+    });
+  }
+
+  toggleLoadMoreLink(response) {
+    $(this.loadMoreLink).toggleClass("hidden", response.length != ITEMS_PER_PAGE)
+  }
+
+  showPosts(response) {
+    var html = JST["templates/post"]({posts: response});
+    this.page == DEFAULT_PAGE ? this.postsContainer.html(html) : this.postsContainer.append(html)
   }
 }
 
