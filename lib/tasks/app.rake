@@ -1,12 +1,12 @@
 namespace :app do
   desc "Send daily posts updates"
   task send_daily_updates: :environment do
-    posts = RecentPostsQuery.new.all
+    post_ids = RecentPostsQuery.new.all.ids
 
     return unless posts
 
-    Subscriber.find_each do |subscriber|
-      ApplicationMailer.daily_updates(subscriber, posts).deliver_later
+    Subscriber.select(:id).each do |subscriber|
+      ApplicationMailer.daily_updates(subscriber.id, post_ids).deliver_later
     end
   end
 end

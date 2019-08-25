@@ -11,10 +11,7 @@ class SubscribersController < ApplicationController
       if subscriber.save
         format.js { flash.now[:notice] = t("flash.subscribers.create.notice") }
       else
-        format.js do
-          flash.now[:alert] = subscriber.errors.full_messages.join(", ")
-          render "subscribers/create", status: :unprocessable_entity
-        end
+        format.js { render json: { error: subscriber.errors.full_messages.join(", ") }, status: :unprocessable_entity }
       end
     end
   end

@@ -9,7 +9,7 @@ class RecentPostsQuery
 
   def all
     relation.where(
-      "posts.created_at >= :from_date AND posts.created_at < :to_date",
+      "posts.created_at BETWEEN :from_date AND :to_date",
       from_date: from_date,
       to_date: to_date
     )

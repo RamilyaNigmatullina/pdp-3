@@ -15,9 +15,9 @@ class ApplicationMailer < ActionMailer::Base
     mail(to: @user.email)
   end
 
-  def daily_updates(subscriber, posts)
-    @subscriber = subscriber
-    @posts = posts
+  def daily_updates(subscriber_id, post_ids)
+    @subscriber = Subscriber.find(subscriber_id)
+    @posts = Post.where(id: post_ids)
 
     mail(to: subscriber.email)
   end
