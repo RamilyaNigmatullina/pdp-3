@@ -6,13 +6,12 @@ class PostsController < ApplicationController
   expose :like, :fetch_like
   expose :search_form, -> { SearchForm.new(search_form_params) }
 
+  respond_to :json
+
   skip_verify_authorized only: %i[index show]
 
   def index
-    respond_to do |format|
-      format.html
-      format.json { render json: posts, each_serializer: PostSerializer }
-    end
+    respond_with posts
   end
 
   def show

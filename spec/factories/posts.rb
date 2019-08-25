@@ -17,5 +17,15 @@ FactoryBot.define do
     trait :with_tags do
       tag_list { Faker::Lorem.words(3) }
     end
+
+    trait :with_likes do
+      transient do
+        likes_number { 3 }
+      end
+
+      after(:create) do |post, evaluator|
+        create_list :like, evaluator.likes_number, post: post
+      end
+    end
   end
 end

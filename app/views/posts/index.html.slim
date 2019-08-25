@@ -14,7 +14,7 @@
         .small-4.columns
           .input-group
             = f.label :order, class: "input-group-label", required: false
-            = f.input :order, label: false, wrapper: false, collection: Post::SORT_ORDERS,
+            = f.input :order, label: false, wrapper: false, collection: post.sort_order_options,
               include_blank: false, input_html: { class: "input-group-field js-order-input" }
   .row
     .columns

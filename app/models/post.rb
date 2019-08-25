@@ -1,8 +1,6 @@
 class Post < ApplicationRecord
   include AASM
 
-  SORT_ORDERS = [%w[Recent recent], %w[Oldest oldest], %w[Popular popular]].freeze
-
   acts_as_taggable
 
   belongs_to :user
