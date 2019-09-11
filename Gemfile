@@ -11,9 +11,11 @@ gem "foundation-icons-sass-rails"
 gem "foundation-rails"
 gem "premailer-rails"
 gem "sass-rails", "~> 5.0.0", ">= 5.0.6"
+gem "skim"
 gem "uglifier", ">= 2.7.2"
 
 source "https://rails-assets.org" do
+  gem "rails-assets-jquery-debounce"
   gem "rails-assets-jquery-ujs"
   gem "rails-assets-jquery2"
 end
@@ -28,6 +30,7 @@ gem "slim"
 # all other gems
 gem "aasm"
 gem "action_policy"
+gem "active_model_serializers", "~> 0.10.0"
 gem "acts-as-taggable-on"
 gem "chartkick"
 gem "decent_decoration"

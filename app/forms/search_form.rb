@@ -1,5 +1,5 @@
 class SearchForm
   include ActiveModel::Model
 
-  attr_accessor :tags
+  attr_accessor :tags, :order
 end

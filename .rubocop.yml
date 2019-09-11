@@ -76,10 +76,8 @@ Metrics/LineLength:
 Metrics/BlockLength:
   Enabled: false
 
-Metrics/AbcSize:
-  Max: 32
-  Exclude:
-    - app/controllers/subscribers_controller.rb
+Layout/AlignHash:
+  Enabled: false
 
 Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
