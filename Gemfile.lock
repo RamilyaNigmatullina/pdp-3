@@ -88,6 +88,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
+    chartkick (3.2.1)
     childprocess (1.0.1)
       rake (< 13.0)
     choice (0.2.0)
@@ -158,6 +159,8 @@ GEM
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     google-analytics-rails (1.1.1)
+    groupdate (4.1.2)
+      activesupport (>= 4.2)
     guard (2.15.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -190,6 +193,7 @@ GEM
       rake
     jasmine-core (2.99.2)
     jasmine-jquery-rails (2.0.3)
+    jquery-datetimepicker-rails (2.4.1.0)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.1.1)
@@ -411,6 +415,7 @@ GEM
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
+    timecop (0.9.1)
     tty-color (0.5.0)
     tty-pager (0.12.1)
       strings (~> 0.1.4)
@@ -462,6 +467,7 @@ DEPENDENCIES
   bundler-audit
   byebug
   capybara
+  chartkick
   database_cleaner
   decent_decoration
   decent_exposure
@@ -476,12 +482,14 @@ DEPENDENCIES
   foundation-icons-sass-rails
   foundation-rails
   google-analytics-rails
+  groupdate
   guard-rspec
   health_check
   inky-rb
   interactor
   jasmine (> 2.0)
   jasmine-jquery-rails
+  jquery-datetimepicker-rails
   kaminari
   launchy
   letter_opener
@@ -519,6 +527,7 @@ DEPENDENCIES
   spring-watcher-listen
   stackprof
   terminal-notifier-guard
+  timecop
   uglifier (>= 2.7.2)
   web-console
   webdrivers

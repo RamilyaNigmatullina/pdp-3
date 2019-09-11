@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     end
     resources :pending_posts, only: :index
     resources :rejected_posts, only: :index
+    resource :statistics, only: :show do
+      get "posts_creation"
+      get "posts_ratio"
+    end
   end
 
   namespace :users do

@@ -13,3 +13,9 @@
     @include form-error;
   }
 }
+
+.button {
+  &__search {
+    padding: 0.695em 1em;
+  }
+}
