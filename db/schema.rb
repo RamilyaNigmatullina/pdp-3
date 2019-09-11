@@ -36,6 +36,12 @@ ActiveRecord::Schema.define(version: 20190721215626) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "subscribers", force: :cascade do |t|
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "taggings", id: :serial, force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
