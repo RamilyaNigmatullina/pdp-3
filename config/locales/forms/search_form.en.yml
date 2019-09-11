@@ -10,3 +10,4 @@ en:
     labels:
       search_form:
         tags: Search
+        order: Sort by

@@ -12,6 +12,9 @@ class Post < ApplicationRecord
   scope :pending, -> { where(state: :pending) }
   scope :approved, -> { where(state: :approved) }
   scope :rejected, -> { where(state: :rejected) }
+  scope :recent, -> { order(created_at: :desc) }
+  scope :oldest, -> { order(created_at: :asc) }
+  scope :popular, -> { order(likes_count: :desc) }
 
   aasm column: :state do
     state :pending, initial: true
