@@ -19,6 +19,11 @@ en:
           create:
             notice: "Post was successfully rejected."
             alert: "Post couldn't be rejected."
+    subscribers:
+      create:
+        notice: "You have been successfully subscribed to the newsletter!"
+      destroy:
+        notice: "You have been successfully unsubscribed."
     actions:
       create:
         notice: "%{resource_name} was successfully created."

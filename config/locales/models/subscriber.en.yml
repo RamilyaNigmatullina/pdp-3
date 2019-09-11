@@ -1,0 +1,12 @@
+en:
+  helpers:
+    submit:
+      subscriber:
+        create: Subscribe
+  activerecord:
+    errors:
+      models:
+        subscriber:
+          attributes:
+            email:
+              taken: "address has already subscribed."
