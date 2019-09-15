@@ -1,9 +1,9 @@
 module Admin
   class StatisticPolicy < ApplicationPolicy
+    alias_rule :posts_creation?, :posts_ratio?, to: :show?
+
     def show?
       user&.super_admin?
     end
-    alias_method :posts_creation?, :show?
-    alias_method :posts_ratio?, :show?
   end
 end
