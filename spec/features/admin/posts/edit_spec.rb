@@ -1,7 +1,7 @@
 require "rails_helper"
 
 feature "Edit Post" do
-  include_context "when admin signed in"
+  include_context :when_admin_signed_in
 
   let(:post) do
     create :post, user: current_user, title: "The best footballers ever", body: "Ronaldinho is the best footbal player."

@@ -9,12 +9,12 @@
       .row
         .small-5.columns
           .input-group
-            = f.label :from_date, class: "input-group-label", required: false
+            = f.label :from_date, class: "input-group-label"
             = f.input :from_date, as: :date_picker, label: false, wrapper: false,
               input_html: { class: "input-group-field", autocomplete: :off }
         .small-5.columns
           .input-group
-            = f.label :until_date, class: "input-group-label", required: false
+            = f.label :until_date, class: "input-group-label"
             = f.input :until_date, as: :date_picker, label: false, wrapper: false,
               input_html: { class: "input-group-field", autocomplete: :off }
         .small-2.columns

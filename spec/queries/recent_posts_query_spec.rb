@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe RecentPostsQuery do
-  include_context "when time is frozen"
+  include_context :when_time_is_frozen
 
   subject(:query) { described_class.new }
 

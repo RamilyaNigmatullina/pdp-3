@@ -1,7 +1,7 @@
 require "rails_helper"
 
 feature "Dislike Post" do
-  include_context "when current user signed in"
+  include_context :when_current_user_signed_in
 
   let(:post) { create :post, :published }
 

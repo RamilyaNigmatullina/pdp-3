@@ -5,11 +5,13 @@ class FilterPostsForm
 
   attr_reader(*ATTRIBUTES)
 
-  validates_date :until_date, on_or_after: :from_date, if: :from_date
+  validates_date :until_date, on_or_after: :from_date, allow_blank: true, if: :from_date
   validates_date :from_date, :until_date, on_or_before: :today, allow_blank: true
 
   def attributes
-    ATTRIBUTES.each_with_object({}) { |attr, h| h[attr] = send(attr) if send(attr) }
+    ATTRIBUTES.each_with_object({}) do |attr, h|
+      h[attr] = send(attr) if send(attr)
+    end
   end
 
   def from_date=(date)

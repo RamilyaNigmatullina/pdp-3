@@ -1,8 +1,8 @@
 require "rails_helper"
 
 feature "Show Post Creation Statistics", :js do
-  include_context "when super admin signed in"
-  include_context "when time is frozen"
+  include_context :when_super_admin_signed_in
+  include_context :when_time_is_frozen
 
   before do
     create_list :post, 2, :published, created_at: 3.days.ago

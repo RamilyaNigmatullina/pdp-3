@@ -1,7 +1,7 @@
 require "rails_helper"
 
 feature "Approve Post" do
-  include_context "when super admin signed in"
+  include_context :when_super_admin_signed_in
 
   let(:user) { create :user, email: "user@example.com" }
 

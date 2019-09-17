@@ -1,7 +1,7 @@
 require "rails_helper"
 
 feature "Update Account" do
-  include_context "when current user signed in"
+  include_context :when_current_user_signed_in
 
   before do
     visit edit_user_registration_path(current_user)
