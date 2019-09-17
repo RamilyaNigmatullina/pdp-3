@@ -7,3 +7,5 @@
     - if allowed_to?(:index?, Post, with: Admin::PendingPostPolicy)
       = active_link_to "Pending Posts", admin_pending_posts_path, active: :exclusive, wrap_tag: :li
       = active_link_to "Rejected Posts", admin_rejected_posts_path, active: :exclusive, wrap_tag: :li
+    - if allowed_to?(:show?, :statistic, with: Admin::StatisticPolicy)
+      = active_link_to "Statistics", admin_statistics_path, active: :exclusive, wrap_tag: :li

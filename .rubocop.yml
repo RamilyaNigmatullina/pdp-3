@@ -91,6 +91,9 @@ Layout/EndAlignment:
     - keyword
     - variable
 
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
 Capybara/FeatureMethods:
   Enabled: false
 

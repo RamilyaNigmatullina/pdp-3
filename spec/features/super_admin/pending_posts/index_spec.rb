@@ -1,7 +1,7 @@
 require "rails_helper"
 
 feature "Pending Post" do
-  include_context "when super admin signed in"
+  include_context :when_super_admin_signed_in
 
   before do
     create :post, title: "The best footballers ever"

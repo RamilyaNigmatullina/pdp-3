@@ -1,0 +1,11 @@
+en:
+  helpers:
+    submit:
+      filter_posts_form:
+        create: Show
+  simple_form:
+    labels:
+      filter_posts_form:
+        from_date: From
+        until_date: Until
+        state: State

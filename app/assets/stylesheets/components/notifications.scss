@@ -1,3 +1,7 @@
 .notice {
   @include callout($primary-color);
 }
+
+.error-text {
+  color: map-get($foundation-palette, alert);
+}
