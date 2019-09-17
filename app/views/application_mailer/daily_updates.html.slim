@@ -1,7 +1,0 @@
-h2 Here’s the new posts for the last day
-
-- @posts.each do |post|
-  h4 = link_to post.title, post_url(post)
-  p = truncate(post.body, length: 250) { link_to " read more", post_url(post) }
-
-= link_to "Unsubscribe", subscriber_url(@subscriber.encrypted_id)

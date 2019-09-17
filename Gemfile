@@ -70,7 +70,6 @@ group :test do
   gem "rspec-its"
   gem "shoulda-matchers"
   gem "terminal-notifier-guard"
-  gem "timecop"
   gem "webmock", require: false
 end
 

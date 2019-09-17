@@ -21,12 +21,6 @@ Rails/OutputSafety:
 RSpec/MultipleExpectations:
   Enabled: false
 
-RSpec/SharedExamples:
-  Enabled: false
-
-RSpec/LetSetup:
-  Enabled: false
-
 RSpec/ExampleLength:
   Enabled: false
 
