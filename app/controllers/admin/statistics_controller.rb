@@ -2,10 +2,11 @@ module Admin
   class StatisticsController < BaseController
     expose :posts_creation_statistic, :fetch_posts_creation_statistic
     expose :posts_ratio_statistic, :fetch_posts_ratio_statistic
+    expose :filter_posts_form, -> { FilterPostsForm.new(filter_posts_form_params) }
 
     helper_method :filter_params
 
-    def index
+    def show
     end
 
     def posts_creation
@@ -21,7 +22,7 @@ module Admin
     end
 
     def filtered_posts
-      FilteredPosts.new(Post.all, filter_params).all
+      FilteredPosts.new(Post.all, filter_posts_form.attributes).all
     end
 
     def fetch_posts_creation_statistic
@@ -32,11 +33,8 @@ module Admin
       filtered_posts.group(:state).count
     end
 
-    def filter_params
-      params.fetch(:filter_posts_form, {})
-        .permit(:state, :created_at_from, :created_at_until)
-        .reject { |_, v| v.blank? }
-        .to_h
+    def filter_posts_form_params
+      params.fetch(:filter_posts_form, {}).permit(:state, :from_date, :until_date)
     end
   end
 end

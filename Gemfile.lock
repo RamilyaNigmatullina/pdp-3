@@ -435,6 +435,7 @@ GEM
     thread_safe (0.3.6)
     tilt (2.0.9)
     timecop (0.9.1)
+    timeliness (0.4.3)
     tty-color (0.5.0)
     tty-pager (0.12.1)
       strings (~> 0.1.4)
@@ -450,6 +451,8 @@ GEM
     unicode-display_width (1.6.0)
     unicode_utils (1.4.0)
     uniform_notifier (1.12.1)
+    validates_timeliness (4.1.1)
+      timeliness (>= 0.3.10, < 1)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (3.7.0)
@@ -551,6 +554,7 @@ DEPENDENCIES
   terminal-notifier-guard
   timecop
   uglifier (>= 2.7.2)
+  validates_timeliness
   web-console
   webdrivers
   webmock

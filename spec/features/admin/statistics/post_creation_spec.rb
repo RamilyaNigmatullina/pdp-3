@@ -19,7 +19,7 @@ feature "Show Post Creation Statistics", :js do
 
     click_on "Show"
 
-    expect(page).to have_content("Posts created from 30 Aug 2019, 19:00 until 04 Sep 2019, 19:00 with state published.")
+    expect(page).to have_content("Posts created from 30 Aug 2019 until 04 Sep 2019 with state published.")
     expect(page).not_to have_content("No posts")
   end
 end

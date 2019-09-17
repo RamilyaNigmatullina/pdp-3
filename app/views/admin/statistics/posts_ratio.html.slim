@@ -5,37 +5,40 @@
     h2 Posts Ratio Statistics
     br
 
-    = simple_form_for :filter_posts_form, method: :get, url: posts_ratio_admin_statistics_path do |f|
+    = simple_form_for filter_posts_form, method: :get, url: posts_ratio_admin_statistics_path do |f|
       .row
         .small-5.columns
           .input-group
-            = f.label :created_at_from, class: "input-group-label", required: false
-            = f.input :created_at_from, label: false, wrapper: false,
-              input_html: { class: "input-group-field datetimepicker",
-                autocomplete: :off, value: filter_params[:created_at_from] }
+            = f.label :from_date, class: "input-group-label", required: false
+            = f.input :from_date, as: :date_picker, label: false, wrapper: false,
+              input_html: { class: "input-group-field", autocomplete: :off }
         .small-5.columns
           .input-group
-            = f.label :created_at_until, class: "input-group-label", required: false
-            = f.input :created_at_until, label: false, wrapper: false,
-              input_html: { class: "input-group-field datetimepicker",
-                autocomplete: :off, value: filter_params[:created_at_until] }
+            = f.label :until_date, class: "input-group-label", required: false
+            = f.input :until_date, as: :date_picker, label: false, wrapper: false,
+              input_html: { class: "input-group-field", autocomplete: :off }
         .small-2.columns
           = f.button :submit, class: "button__search"
 
-    - if filter_params.present?
-      h3 Summary
-      ' Posts created
-      - if filter_params[:created_at_from].presence
-        ' from
-        strong => I18n.l(filter_params[:created_at_from].to_datetime, format: :full_datetime)
-      - if filter_params[:created_at_until].presence
-        ' until
-        strong = I18n.l(filter_params[:created_at_until].to_datetime, format: :full_datetime)
-      | .
-      br
-      br
+    - if filter_posts_form.valid?
+      - if filter_posts_form.attributes.any?
+        h3 Summary
+        ' Posts created
+        - if filter_posts_form.from_date
+          ' from
+          strong => l(filter_posts_form.from_date, format: :full_date)
+        - if filter_posts_form.until_date
+          ' until
+          strong = l(filter_posts_form.until_date, format: :full_date)
+        | .
+        br
+        br
 
-    - if posts_ratio_statistic.any?
-      = pie_chart posts_ratio_statistic
+      - if posts_creation_statistic.any?
+        = pie_chart posts_ratio_statistic
+      - else
+        h5 No posts
+
     - else
-      h5 No posts
+      .error-text
+        = filter_posts_form.errors.full_messages.join(", ")

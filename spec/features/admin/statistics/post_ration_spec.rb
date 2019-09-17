@@ -17,7 +17,7 @@ feature "Show Post Ratio Statistics", :js do
 
     click_on "Show"
 
-    expect(page).to have_content("Posts created from 02 Sep 2019, 19:00 until 04 Sep 2019, 19:00.")
+    expect(page).to have_content("Posts created from 02 Sep 2019 until 04 Sep 2019.")
     expect(page).not_to have_content("No posts")
   end
 end

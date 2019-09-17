@@ -53,6 +53,7 @@ gem "rollbar"
 gem "seedbank"
 gem "selectize-rails"
 gem "stackprof"
+gem "validates_timeliness"
 
 group :staging, :production do
   gem "newrelic_rpm"

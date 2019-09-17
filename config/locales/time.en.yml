@@ -7,3 +7,7 @@ en:
       us_date: "%m/%d/%Y"
       us_time: "%I:%M %p"
       full_datetime: "%d %b %Y, %k:%M"
+      ru_date: "%d %b %Y"
+  date:
+    formats:
+      full_date: "%d %b %Y"

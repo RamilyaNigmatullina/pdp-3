@@ -2,12 +2,10 @@ en:
   helpers:
     submit:
       filter_posts_form:
-        submit: Show
-      posts_ratio:
-        submit: Show
+        create: Show
   simple_form:
     labels:
       filter_posts_form:
-        created_at_from: From
-        created_at_until: Until
+        from_date: From
+        until_date: Until
         state: State
