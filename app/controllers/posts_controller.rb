@@ -4,9 +4,10 @@ class PostsController < ApplicationController
   expose_decorated :posts, :fetch_posts
   expose_decorated :post
   expose :like, :fetch_like
-  expose :search_form, -> { SearchForm.new(search_form_params) }
 
   respond_to :json
+
+  helper_method :search_form_params
 
   skip_verify_authorized only: %i[index show]
 
