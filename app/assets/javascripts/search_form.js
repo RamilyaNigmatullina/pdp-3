@@ -20,17 +20,17 @@ class SearchForm {
   }
 
   bindEvent() {
-    this.loadMoreLink.addEventListener("click", this.loadMore);
-    this.orderInput.addEventListener("change", this.updatePosts);
-    this.tagsInput.addEventListener("input", $.debounce(this.updatePosts, 300));
+    this.loadMoreLink.addEventListener("click", this.loadMore.bind(this));
+    this.orderInput.addEventListener("change", this.updatePosts.bind(this));
+    this.tagsInput.addEventListener("input", $.debounce(this.updatePosts.bind(this), 300));
   }
 
-  updatePosts = () => {
+  updatePosts() {
     this.page = DEFAULT_PAGE;
     this.loadPosts();
   }
 
-  loadMore = (event) => {
+  loadMore() {
     event.preventDefault();
     this.page += 1;
     this.loadPosts();
@@ -65,4 +65,6 @@ class SearchForm {
   }
 }
 
-new SearchForm(SEARCH_FORM_SELECTOR);
+if ($(SEARCH_FORM_SELECTOR).length > 0) {
+  new SearchForm(SEARCH_FORM_SELECTOR);
+}

@@ -12,8 +12,8 @@ feature "Show Post Ratio Statistics", :js do
   scenario "Admin sees post ratio statistics" do
     visit posts_ratio_admin_statistics_path
 
-    fill_in "From", with: 3.days.ago
-    fill_in "Until", with: 1.day.ago
+    fill_in "From", with: 3.days.ago.to_date
+    fill_in "Until", with: 1.day.ago.to_date
 
     click_on "Show"
 
