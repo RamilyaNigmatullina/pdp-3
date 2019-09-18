@@ -16,7 +16,7 @@ class SearchForm {
     this.page = DEFAULT_PAGE;
 
     this.bindEvent();
-    this.loadPosts(this);
+    this.loadPosts();
   }
 
   bindEvent() {
