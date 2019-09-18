@@ -12,8 +12,8 @@ feature "Show Post Creation Statistics", :js do
   scenario "Admin sees post creation statistics" do
     visit posts_creation_admin_statistics_path
 
-    fill_in "From", with: 6.days.ago
-    fill_in "Until", with: 1.day.ago
+    fill_in "From", with: 6.days.ago.to_date
+    fill_in "Until", with: 1.day.ago.to_date
 
     select "Published", from: "State"
 
