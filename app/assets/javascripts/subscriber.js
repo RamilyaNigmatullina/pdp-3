@@ -4,8 +4,8 @@ const SUBSCRIBER_EMAIL_INPUT_SELECTOR = "#subscriber_email";
 class Subscriber {
   constructor(formSelector) {
     this.emailInput =  $(SUBSCRIBER_EMAIL_INPUT_SELECTOR, this.formSelector);
-    $(formSelector).on ("ajax:success", this.clearInput.bind());
-    $(formSelector).on ("ajax:error", this.clearInput.bind());
+    $(formSelector).on ("ajax:success", this.clearInput.bind(this));
+    $(formSelector).on ("ajax:error", this.clearInput.bind(this));
   }
 
   clearInput(event, data) {
