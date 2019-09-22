@@ -1,7 +1,7 @@
 require "rails_helper"
 
 feature "Show Post Ratio Statistics", :js do
-  include_context :when_super_admin_signed_in
+  include_context :when_admin_signed_in
   include_context :when_time_is_frozen
 
   before do
@@ -10,7 +10,7 @@ feature "Show Post Ratio Statistics", :js do
   end
 
   scenario "Admin sees post ratio statistics" do
-    visit posts_ratio_admin_statistics_path
+    visit posts_ratio_admins_statistics_path
 
     fill_in "From", with: 3.days.ago.to_date
     fill_in "Until", with: 1.day.ago.to_date

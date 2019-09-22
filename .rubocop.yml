@@ -102,3 +102,7 @@ RSpec/HookArgument:
 
 RSpec/NestedGroups:
   Max: 4
+
+RSpec/DescribeClass:
+  Exclude:
+    - spec/lib/tasks/**/*

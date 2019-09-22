@@ -49,7 +49,6 @@ bin/server
 
   - User: "user@example.com / password"
   - Admin: "admin@example.com / password"
-  - SuperAdmin: "super_admin@example.com / password"
 
 ## Production
 https://ramilya-pdp-3.herokuapp.com

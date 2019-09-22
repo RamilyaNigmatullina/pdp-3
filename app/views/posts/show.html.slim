@@ -19,9 +19,9 @@
             => link_to "Like", users_post_likes_path(post), method: :post
           => post.likes_count
 
-      - if allowed_to?(:edit?, post, with: Admin::PostPolicy)
-        => link_to "Edit", edit_admin_post_path(post)
-        = link_to "Delete", admin_post_path(post), method: :delete, data: { confirm: "Are you sure?" }
-      - if allowed_to?(:update?, post, with: Admin::PendingPostPolicy)
-        => link_to "Publish", admin_post_approval_path(post), method: :post
-        = link_to "Reject", admin_post_rejection_path(post), method: :post
+      - if allowed_to?(:edit?, post, with: Users::PostPolicy)
+        => link_to "Edit", edit_users_post_path(post)
+        = link_to "Delete", users_post_path(post), method: :delete, data: { confirm: "Are you sure?" }
+      - if allowed_to?(:update?, post, with: Admins::PendingPostPolicy)
+        => link_to "Publish", admins_post_approval_path(post), method: :post
+        = link_to "Reject", admins_post_rejection_path(post), method: :post
