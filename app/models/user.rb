@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-  enum role: { user: "user", admin: "admin", super_admin: "super_admin" }
+  enum role: { user: "user", admin: "admin" }
 end

@@ -9,7 +9,7 @@ en:
       confirmations:
         create:
           alert: "Confirmations could not be sent"
-    admin:
+    admins:
       posts:
         approvals:
           create:

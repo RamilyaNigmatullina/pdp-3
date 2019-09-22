@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :posts, only: %i[index show]
   resources :subscribers, only: %i[show create destroy]
 
-  namespace :admin do
-    resources :posts, only: %i[new create edit update destroy] do
+  namespace :admins do
+    resources :posts, only: [] do
       resource :approval, module: :posts, only: :create
       resource :rejection, module: :posts, only: :create
     end
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   end
 
   namespace :users do
-    resources :posts, only: [] do
+    resources :posts, only: %i[new create edit update destroy] do
       resources :likes, only: %i[create destroy], module: :posts
     end
   end

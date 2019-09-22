@@ -1,4 +1,3 @@
-FactoryBot.create(:super_admin, email: "super_admin@example.com")
 FactoryBot.create(:admin, email: "admin@example.com")
 
 user = FactoryBot.create(:user, email: "user@example.com")

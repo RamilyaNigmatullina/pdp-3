@@ -1,7 +1,7 @@
 require "rails_helper"
 
 feature "Show Post Creation Statistics", :js do
-  include_context :when_super_admin_signed_in
+  include_context :when_admin_signed_in
   include_context :when_time_is_frozen
 
   before do
@@ -10,7 +10,7 @@ feature "Show Post Creation Statistics", :js do
   end
 
   scenario "Admin sees post creation statistics" do
-    visit posts_creation_admin_statistics_path
+    visit posts_creation_admins_statistics_path
 
     fill_in "From", with: 6.days.ago.to_date
     fill_in "Until", with: 1.day.ago.to_date
