@@ -19,6 +19,6 @@ class ApplicationMailer < ActionMailer::Base
     @subscriber = Subscriber.find(subscriber_id)
     @posts = Post.where(id: post_ids)
 
-    mail(to: subscriber.email)
+    mail(to: @subscriber.email)
   end
 end
