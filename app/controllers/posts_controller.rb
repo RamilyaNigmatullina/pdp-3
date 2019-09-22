@@ -1,6 +1,4 @@
 class PostsController < ApplicationController
-  DEFAULT_SORT_ORDER = "recent".freeze
-
   expose_decorated :posts, :fetch_posts
   expose_decorated :post
   expose :like, :fetch_like
@@ -12,7 +10,10 @@ class PostsController < ApplicationController
   skip_verify_authorized only: %i[index show]
 
   def index
-    respond_with posts
+    respond_to do |format|
+      format.html
+      format.json { respond_with posts }
+    end
   end
 
   def show
@@ -21,7 +22,7 @@ class PostsController < ApplicationController
   private
 
   def filtered_posts
-    FilteredPosts.new(Post.includes(:user, :taggings).published, search_form_params.to_h).all
+    FilteredPosts.new(Post.includes(:user, :taggings).published, search_form_params).all
   end
 
   def fetch_posts
@@ -33,10 +34,10 @@ class PostsController < ApplicationController
   end
 
   def search_form_params
-    params.fetch(:search_form, {}).permit(:tags, :order)
+    params.fetch(:search_form, {}).permit(:tags, :order).to_h
   end
 
   def sort_order
-    search_form_params[:order] || DEFAULT_SORT_ORDER
+    search_form_params[:order]
   end
 end
