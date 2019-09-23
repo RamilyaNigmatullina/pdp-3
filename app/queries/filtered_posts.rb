@@ -1,5 +1,5 @@
 class FilteredPosts
-  ALLOWED_PARAMS = %i[tags created_at_from created_at_until state].freeze
+  ALLOWED_PARAMS = %i[tags from_date until_date state].freeze
 
   attr_reader :relation, :filter_params
   private :relation, :filter_params
@@ -23,11 +23,11 @@ class FilteredPosts
     relation.tagged_with(tags.split, wild: true, any: true)
   end
 
-  def by_created_at_from(relation, min_date)
+  def by_from_date(relation, min_date)
     relation.where("posts.created_at >= ?", min_date)
   end
 
-  def by_created_at_until(relation, max_date)
+  def by_until_date(relation, max_date)
     relation.where("posts.created_at <= ?", max_date)
   end
 

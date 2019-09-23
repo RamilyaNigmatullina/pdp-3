@@ -18,8 +18,8 @@ class Post < ApplicationRecord
 
   aasm column: :state do
     state :pending, initial: true
-    state :published, :cleaning
-    state :rejected, :cleaning
+    state :published
+    state :rejected
 
     event :publish do
       transitions from: :pending, to: :published

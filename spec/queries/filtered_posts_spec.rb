@@ -19,14 +19,14 @@ describe FilteredPosts do
       it { is_expected.to match_array([post_1]) }
     end
 
-    context "when filtered by created at from" do
-      let(:filter_params) { { created_at_from: 3.days.ago } }
+    context "when filtered by from date" do
+      let(:filter_params) { { from_date: 3.days.ago } }
 
       it { is_expected.to match_array([post_2]) }
     end
 
-    context "when filtered by created at until" do
-      let(:filter_params) { { created_at_until: 3.days.ago } }
+    context "when filtered by until date" do
+      let(:filter_params) { { until_date: 3.days.ago } }
 
       it { is_expected.to match_array([post_1]) }
     end
