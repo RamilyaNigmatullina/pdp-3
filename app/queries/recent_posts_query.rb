@@ -3,7 +3,7 @@ class RecentPostsQuery
 
   attr_reader :relation
 
-  def initialize(relation = Post.all)
+  def initialize(relation = Post.published.all)
     @relation = relation
   end
 
