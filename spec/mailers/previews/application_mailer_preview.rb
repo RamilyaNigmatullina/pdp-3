@@ -12,8 +12,8 @@ class ApplicationMailerPreview < ActionMailer::Preview
   end
 
   def daily_updates
-    subscriber_id = FactoryBot.build_stubbed(:subscriber).id
-    post_ids = FactoryBot.build_stubbed_list(:post, 2).map(&:id)
+    subscriber_id = FactoryBot.create(:subscriber).id
+    post_ids = FactoryBot.create_list(:post, 2).map(&:id)
 
     ApplicationMailer.daily_updates(subscriber_id, post_ids)
   end

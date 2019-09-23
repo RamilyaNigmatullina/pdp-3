@@ -4,3 +4,5 @@ en:
       subject: Post published
     post_rejected:
       subject: Post rejected
+    daily_updates:
+      subject: Daily newsletter
